@@ -1,0 +1,3 @@
+# Project exclude paths
+/wp-content/themes/happydog/node_modules/
+wp-config.php
