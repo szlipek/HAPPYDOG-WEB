@@ -1,0 +1,217 @@
+.nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 10;
+    transition: $transition;
+    &__logo {
+        position: relative;
+        z-index: 2;
+        img {
+            transition: $transition;
+            height: 6.9rem;
+            width: auto;
+            display: block;
+        }
+    }
+    &__top {
+        background: $c-one;
+        padding: 2rem 0;
+        transition: $transition;
+        position: relative;
+        z-index: 2;
+        .container {
+            display: flex;
+            justify-content: flex-end;
+            a {
+                font-size: 1.8rem;
+                img {
+                    height: 2.7rem;
+                    width: 3.2rem;
+                    object-fit: contain;
+                }
+            }
+        }
+    }
+    &__info {
+        display: flex;
+        align-items: center;
+        a {
+            margin-left: 7rem;
+            color: white;
+            font-size: 1.8rem;
+            display: flex;
+            align-items: center;
+            text-decoration: none;
+            @include breakpoint(tablet) {
+                margin-left: 3rem;
+            }
+            img {
+                margin-right: .5rem;
+            }
+        }
+    }
+    &__search {
+        margin: 0 auto;
+        position: relative;
+        @include breakpoint(tablet) {
+            display: none;
+        }
+        input[type="search"] {
+            width: 32rem;
+            height: 5rem;
+            border: 1px solid white;
+            border-radius: 3rem;
+            background: inherit;
+            padding: 0 6rem 0 2rem;
+            color: white;
+            transition: $transition;
+            &:focus {
+                outline: none;
+                border-color: lightgrey;
+            }
+            &::placeholder {
+                opacity: .7;
+                color: white;
+            }
+        }
+        input[type="submit"] {
+            text-indent: -99999rem;
+            background-color: inherit;
+            background-image: url(/wp-content/themes/happydog/assets/img/search.svg);
+            background-repeat: no-repeat;
+            background-size: contain;
+            background-position: center;
+            width: 30px;
+            height: 30px;
+            position: absolute;
+            top: 50%;
+            right: 2rem;
+            transform: translateY(-50%);
+            border: none;
+        }
+    }
+    &__bottom {
+        padding: 1.5rem 0;
+        background: white;
+        transition: $transition;
+        .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+    }
+    &__menu {
+        &-list {
+            display: flex;
+            align-items: center;
+            @include breakpoint(tablet) {
+                position: fixed;
+                top: 4rem;
+                left: 0;
+                width: 100%;
+                background: white;
+                height: calc(100vh - 4rem);
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                transform: translateX(-110%);
+                transition: $transition;
+
+            }
+
+            a {
+                margin-left: 11.6rem;
+                font-size: 2rem;
+                line-height: 2.4rem;
+                color: $c-two;
+                text-decoration: none;
+                @include breakpoint(smallDesktop) {
+                    margin-left: 6rem;
+                }
+                @include breakpoint(tablet) {
+                    margin-left: 0;
+                    font-size: 3rem;
+                    line-height: 4rem;
+                }
+            }
+        }
+        &.active {
+            .nav__menu-list {
+                @include breakpoint(tablet) {
+                    transform: translateX(0);
+                }
+            }
+        }
+    }
+    &__btn {
+        display: none;
+        @include breakpoint(tablet) {
+            width: 3rem;
+            height: 2.4rem;
+            margin-top: 1rem;
+            position: relative;
+            display: block;
+            z-index: 4;
+            span {
+                position: absolute;
+                width: 100%;
+                height: .3rem;
+                background: $c-one;
+                border-radius: .2rem;
+                display: block;
+                left: 50%;
+                transform: translateX(-50%);
+                transition: $transition;
+
+                &:first-child {
+                    top: 0;
+                }
+
+                &:nth-child(2) {
+                    top: 50%;
+                    transform: translate(-50%, -50%);
+                }
+
+                &:last-child {
+                    bottom: 0;
+                }
+            }
+            &.active {
+                span {
+                    &:first-child {
+                        width: 0;
+                    }
+
+                    &:nth-child(2) {
+                        top: 1.2rem;
+                        transform: rotate(45deg);
+                        left: 0;
+                    }
+
+                    &:nth-child(3) {
+                        top: 1.2rem;
+                        left: 0;
+                        bottom: auto;
+                        transform: rotate(-45deg);
+                    }
+                }
+            }
+        }
+    }
+    &.scrolled {
+        box-shadow: $shadow;
+        .nav__top {
+            padding: .5rem 0;
+        }
+        .nav__bottom {
+            padding: .5rem 0;
+        }
+        .nav__logo {
+            img {
+                height: 4rem;
+            }
+        }
+    }
+}

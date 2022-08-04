@@ -1,0 +1,20 @@
+.container {
+    box-sizing: border-box;
+    padding: 0 3rem;
+    width: 100%;
+    max-width: 126rem;
+    margin: 0 auto;
+    font-family: $f-one;
+}
+
+html {
+    color: $c-three;
+}
+
+main {
+    margin-top: 19.1rem;
+}
+
+.box-shadow {
+    box-shadow: $shadow1;
+}

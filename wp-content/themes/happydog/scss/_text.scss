@@ -1,0 +1,70 @@
+p {
+    font-size: 1.6rem;
+    line-height: 2.2rem;
+}
+h1 {
+    font-family: $f-two;
+    font-size: 5.5rem;
+    line-height: 6rem;
+    @include breakpoint(tablet) {
+        font-size: 3.6rem;
+        line-height: 4.2rem;
+    }
+}
+
+h2 {
+    font-family: $f-two;
+    font-size: 5.5rem;
+    line-height: 6.1rem;
+    @include breakpoint(tablet) {
+        font-size: 3.6rem;
+        line-height: 4.2rem;
+    }
+}
+
+.title {
+    color: $c-one;
+    margin-bottom: 6.5rem;
+    &::before {
+        content: '-';
+        padding-right: .5rem;
+    }
+    &::after {
+        content: '-';
+        padding-left: .5rem;
+    }
+}
+
+h3 {
+    font-family: $f-two;
+    font-size: 4rem;
+    line-height: 4.4rem;
+}
+
+h5 {
+    font-family: $f-one;
+    font-size: 2rem;
+    line-height: 2.4rem;
+}
+h6 {
+    font-size: 1.8rem;
+    line-height: 2.3rem;
+}
+
+b,
+strong {
+    font-weight: bold;
+}
+
+i,
+em {
+    font-style: italic;
+}
+
+.text-center {
+    text-align: center;
+}
+
+.text-right {
+    text-align: right;
+}

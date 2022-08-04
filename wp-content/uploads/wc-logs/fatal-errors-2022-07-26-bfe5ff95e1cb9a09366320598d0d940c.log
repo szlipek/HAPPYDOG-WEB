@@ -1,0 +1,43 @@
+2022-07-26T11:19:24+00:00 CRITICAL syntax error, unexpected '<', expecting end of file w C:\strony\happydog\wp-content\themes\happydog\modules\blocks\product.php w linii 56
+
+2022-07-26T11:20:54+00:00 CRITICAL syntax error, unexpected ''<br/>'' (T_CONSTANT_ENCAPSED_STRING), expecting ';' or ',' w C:\strony\happydog\wp-content\themes\happydog\modules\blocks\product.php w linii 56
+
+2022-07-26T11:23:11+00:00 CRITICAL Uncaught Error: Object of class WC_Product_Attribute could not be converted to string in C:\strony\happydog\wp-content\themes\happydog\modules\blocks\product.php:56
+Stack trace:
+#0 C:\strony\happydog\wp-content\plugins\advanced-custom-fields-pro\pro\blocks.php(438): include()
+#1 C:\strony\happydog\wp-content\plugins\advanced-custom-fields-pro\pro\blocks.php(367): acf_render_block(Array, '', false, 12, Object(WP_Block), Array)
+#2 C:\strony\happydog\wp-content\plugins\advanced-custom-fields-pro\pro\blocks.php(328): acf_rendered_block(Array, '', false, 12, Object(WP_Block))
+#3 C:\strony\happydog\wp-includes\class-wp-block.php(255): acf_render_block_callback(Array, '', Object(WP_Block))
+#4 C:\strony\happydog\wp-includes\blocks.php(901): WP_Block->render()
+#5 C:\strony\happydog\wp-includes\blocks.php(939): render_block(Array)
+#6 C:\strony\happydog\wp-includes\class-wp-hook.php(307): do_blocks('<!-- wp:acf/hea...')
+#7 C:\strony\happydog\wp-includes\plugin.php(191): WP_Hook->apply_filters('<!-- wp:acf/hea...', Array w C:\strony\happydog\wp-content\themes\happydog\modules\blocks\product.php w linii 56
+
+2022-07-26T11:25:03+00:00 CRITICAL Uncaught ArgumentCountError: Too few arguments to function variation_radio_buttons(), 0 passed in C:\strony\happydog\wp-content\themes\happydog\modules\blocks\product.php on line 54 and exactly 2 expected in C:\strony\happydog\wp-content\themes\happydog\functions.php:361
+Stack trace:
+#0 C:\strony\happydog\wp-content\themes\happydog\modules\blocks\product.php(54): variation_radio_buttons()
+#1 C:\strony\happydog\wp-content\plugins\advanced-custom-fields-pro\pro\blocks.php(438): include('C:\\strony\\happy...')
+#2 C:\strony\happydog\wp-content\plugins\advanced-custom-fields-pro\pro\blocks.php(367): acf_render_block(Array, '', false, 12, Object(WP_Block), Array)
+#3 C:\strony\happydog\wp-content\plugins\advanced-custom-fields-pro\pro\blocks.php(328): acf_rendered_block(Array, '', false, 12, Object(WP_Block))
+#4 C:\strony\happydog\wp-includes\class-wp-block.php(255): acf_render_block_callback(Array, '', Object(WP_Block))
+#5 C:\strony\happydog\wp-includes\blocks.php(901): WP_Block->render()
+#6 C:\strony\happydog\wp-i w C:\strony\happydog\wp-content\themes\happydog\functions.php w linii 361
+
+2022-07-26T11:33:17+00:00 CRITICAL syntax error, unexpected 'woocommerce_template_single_ti' (T_STRING) w C:\strony\happydog\wp-content\themes\happydog\modules\blocks\product.php w linii 60
+
+2022-07-26T11:33:18+00:00 CRITICAL syntax error, unexpected 'woocommerce_template_single_ti' (T_STRING) w C:\strony\happydog\wp-content\themes\happydog\modules\blocks\product.php w linii 60
+
+2022-07-26T11:33:27+00:00 CRITICAL syntax error, unexpected 'woocommerce_template_single_ti' (T_STRING) w C:\strony\happydog\wp-content\themes\happydog\modules\blocks\product.php w linii 60
+
+2022-07-26T11:37:11+00:00 CRITICAL Maximum execution time of 300 seconds exceeded w C:\strony\happydog\wp-includes\formatting.php w linii 401
+
+2022-07-26T11:38:27+00:00 CRITICAL Maximum execution time of 300 seconds exceeded w C:\strony\happydog\wp-includes\formatting.php w linii 301
+
+2022-07-26T12:16:04+00:00 CRITICAL syntax error, unexpected '}', expecting ']' w C:\strony\happydog\wp-content\themes\happydog\modules\blocks\product.php w linii 58
+
+2022-07-26T12:16:18+00:00 CRITICAL Cannot use [] for reading w C:\strony\happydog\wp-content\themes\happydog\modules\blocks\product.php w linii 57
+
+2022-07-26T12:29:02+00:00 CRITICAL syntax error, unexpected '$v_product' (T_VARIABLE), expecting ';' or ',' w C:\strony\happydog\wp-content\themes\happydog\modules\blocks\product.php w linii 59
+
+2022-07-26T12:29:33+00:00 CRITICAL syntax error, unexpected ''</p>'' (T_CONSTANT_ENCAPSED_STRING), expecting ';' or ',' w C:\strony\happydog\wp-content\themes\happydog\modules\blocks\product.php w linii 59
+

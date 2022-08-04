@@ -1,0 +1,128 @@
+@font-face {
+    font-family: 'Fave Script Bold Pro';
+    src: url('/wp-content/themes/happydog/assets/fonts/Fave-ScriptBoldPro.woff2') format('woff2');
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Myriad Pro';
+    src: url('/wp-content/themes/happydog/assets/fonts/MyriadPro-Semibold.woff2') format('woff2'),
+    url('/wp-content/themes/happydog/assets/fonts/MyriadPro-Semibold.woff') format('woff');
+    font-weight: 600;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Myriad Pro';
+    src: url('/wp-content/themes/happydog/assets/fonts/MyriadPro-Regular.woff2') format('woff2'),
+    url('/wp-content/themes/happydog/assets/fonts/MyriadPro-Regular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Myriad Pro';
+    src: url('/wp-content/themes/happydog/assets/fonts/MyriadPro-Bold.woff2') format('woff2'),
+    url('/wp-content/themes/happydog/assets/fonts/MyriadPro-Bold.woff') format('woff');
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+}
+
+
+$f-one: 'Myriad Pro', sans-serif;
+$f-two: 'Fave Script Bold Pro', sans-serif;
+
+// Colors //
+
+$c-one: #003863;
+$c-two: #333333;
+$c-three: #3b3b3b;
+
+// paddings //
+
+$p1: 7rem 0;
+$p2: 10rem 0 14rem;
+$p3: 3rem 0;
+
+
+
+// Fonts weights //
+
+$thin: 100;
+$regular: 400;
+$medium: 500;
+$bold: 600;
+$extrabold: 900;
+
+// Shadows //
+
+$shadow: 0 20px 60px 0 rgba(0,56,99,0.19);
+$shadow1: 0 5px 25px 0 rgba(0,56,99,0.19);
+$shadow2: 0 30px 60px 0 rgba(0,0,0,0.1);;
+
+
+// Transitions //
+
+$transition: all .4s ease-in;
+$transitionLong: all 1s linear;
+$transitionExtraLong: all 40s linear;
+
+
+@mixin breakpoint($point) {
+    @if $point == bigDesktop {
+        @media (min-width: 1431px) {
+            @content;
+        }
+    } @else if $point == fullHd {
+        @media (max-width: 1960px) {
+            @content;
+        }
+    }
+    @else if $point == onlyDesktop {
+        @media (min-width: 960px) {
+            @content;
+        }
+    } @else if $point == mediumDesktop {
+        @media (max-width: 1720px) {
+            @content;
+        }
+    }
+    @else if $point == smallDesktop {
+        @media (max-width: 1430px) {
+            @content;
+        }
+    } @else if $point == smallerDesktop {
+        @media (max-width: 1230px) {
+            @content;
+        }
+    } @else if $point == tablet {
+        @media (max-width: 960px) {
+            @content;
+        }
+    } @else if $point == smallComputer {
+        @media (max-height: 765px) and (min-width: 960px) {
+            @content;
+        }
+    } @else if $point == phablet {
+        @media (max-width: 780px) {
+            @content;
+        }
+    } @else if $point == newMobile {
+        @media (max-width: 500px) and (min-height: 700px) {
+            @content;
+        }
+    } @else if $point == mobileonly {
+        @media (max-width: 485px) {
+            @content;
+        }
+    } @else if $point == smallMobile {
+        @media (max-width: 330px) {
+            @content;
+        }
+    }
+}

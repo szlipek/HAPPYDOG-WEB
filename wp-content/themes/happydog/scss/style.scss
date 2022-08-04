@@ -1,0 +1,29 @@
+/*!
+Theme Name: HappyDog !!! :)
+Theme URI: https://spmedia.pl
+Author: SP-Media Przemysław Szliep
+Author URI: https://spmedia.pl
+Description: Templatka dla sklepu HappyDog
+Version: 1.0
+Text Domain: spmedia
+
+
+*/
+
+@import 'reset';
+@import 'var';
+@import 'plugins';
+@import 'text';
+@import 'buttons';
+@import 'global';
+@import 'nav';
+@import 'header';
+@import 'product-category';
+@import 'world';
+@import 'sections';
+@import 'series';
+@import 'news';
+@import 'newsletter';
+@import 'breadcrumbs';
+
+@import 'footer';

@@ -1,0 +1,39 @@
+.series {
+    padding: $p1;
+    @include breakpoint(tablet) {
+        padding: $p3
+    }
+    &__row {
+        display: flex;
+        align-items: flex-start;
+        flex-wrap: wrap;
+        gap: 3rem;
+    }
+    &__single {
+        flex: 1;
+        text-align: center;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        margin-bottom: 3rem;
+        figure {
+            img {
+                height: 27rem;
+                margin: 0 auto 2rem;
+            }
+        }
+        a {
+            color: $c-one;
+            text-decoration: none;
+            img {
+                margin-left: .5rem;
+            }
+        }
+        &-text {
+            max-width: 18rem;
+            margin: 0 auto;
+        }
+    }
+
+}

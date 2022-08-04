@@ -1,0 +1,12 @@
+.breadcrumbs {
+    padding: 3rem 0;
+    color: $c-three;
+    a {
+        color: $c-three;
+        text-decoration: none;
+        transition: $transition;
+        &:hover {
+            color: $c-one;
+        }
+    }
+}

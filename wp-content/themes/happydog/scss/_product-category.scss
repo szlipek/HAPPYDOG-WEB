@@ -1,0 +1,72 @@
+.our__products {
+    padding: $p1;
+    @include breakpoint(tablet) {
+        padding: $p3
+    }
+    h2 {
+        text-align: center;
+    }
+    &-row {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: flex-start;
+    }
+    &-single {
+        flex: 1;
+        display: flex;
+        align-items: center;
+        position: relative;
+        padding-bottom: 8rem;
+        @include breakpoint(smallDesktop) {
+            flex: 0 0 calc(33% - 9rem);
+        }
+        @include breakpoint(tablet) {
+            flex: 0 0 100%;
+        }
+        &-text {
+            background: white;
+            box-shadow: $shadow;
+            padding: 2.5rem 2.5rem 2.5rem 8rem;
+            margin-left: 12rem;
+            @include breakpoint(smallDesktop) {
+                margin-left: 6rem;
+            }
+
+            @include breakpoint(tablet) {
+                margin-left: 0;
+                width: 100%;
+            }
+            h3 {
+                color: $c-one;
+                text-align: center;
+                margin-bottom: 2rem;
+            }
+            p {
+                margin-bottom: 4.4rem;
+            }
+        }
+        figure {
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            width: 50%;
+            height: 130%;
+            max-height: 27rem;
+            transform: translate(0, 2rem);
+            @include breakpoint(smallDesktop) {
+                width: 40%;
+            }
+            @include breakpoint(tablet) {
+                height: 50%;
+                width: 10rem;
+                transform: translate(-3rem, -3rem)
+            }
+            img {
+                height: 100%;
+                width: 100%;
+                object-fit: contain;
+                object-position: bottom;
+            }
+        }
+    }
+}

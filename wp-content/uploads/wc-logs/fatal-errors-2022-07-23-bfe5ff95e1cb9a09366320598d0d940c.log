@@ -1,0 +1,24 @@
+2022-07-23T09:29:53+00:00 CRITICAL Uncaught Error: Call to undefined function get_breadcrumb() in C:\strony\happydog\wp-content\themes\happydog\modules\blocks\breadcrumbs.php:2
+Stack trace:
+#0 C:\strony\happydog\wp-content\plugins\advanced-custom-fields-pro\pro\blocks.php(438): include()
+#1 C:\strony\happydog\wp-content\plugins\advanced-custom-fields-pro\pro\blocks.php(367): acf_render_block(Array, '', false, 12, Object(WP_Block), Array)
+#2 C:\strony\happydog\wp-content\plugins\advanced-custom-fields-pro\pro\blocks.php(328): acf_rendered_block(Array, '', false, 12, Object(WP_Block))
+#3 C:\strony\happydog\wp-includes\class-wp-block.php(255): acf_render_block_callback(Array, '', Object(WP_Block))
+#4 C:\strony\happydog\wp-includes\blocks.php(901): WP_Block->render()
+#5 C:\strony\happydog\wp-includes\blocks.php(939): render_block(Array)
+#6 C:\strony\happydog\wp-includes\class-wp-hook.php(307): do_blocks('<!-- wp:acf/hea...')
+#7 C:\strony\happydog\wp-includes\plugin.php(191): WP_Hook->apply_filters('<!-- wp:acf/hea...', Array)
+#8 C:\strony\happydog w C:\strony\happydog\wp-content\themes\happydog\modules\blocks\breadcrumbs.php w linii 2
+
+2022-07-23T09:30:16+00:00 CRITICAL syntax error, unexpected 'href' (T_STRING), expecting ';' or ',' w C:\strony\happydog\wp-content\themes\happydog\functions.php w linii 11
+
+2022-07-23T09:30:18+00:00 CRITICAL syntax error, unexpected 'href' (T_STRING), expecting ';' or ',' w C:\strony\happydog\wp-content\themes\happydog\functions.php w linii 11
+
+2022-07-23T09:30:22+00:00 CRITICAL syntax error, unexpected 'href' (T_STRING), expecting ';' or ',' w C:\strony\happydog\wp-content\themes\happydog\functions.php w linii 11
+
+2022-07-23T09:30:23+00:00 CRITICAL syntax error, unexpected 'href' (T_STRING), expecting ';' or ',' w C:\strony\happydog\wp-content\themes\happydog\functions.php w linii 11
+
+2022-07-23T09:30:36+00:00 CRITICAL syntax error, unexpected '»' (T_STRING), expecting ';' or ',' w C:\strony\happydog\wp-content\themes\happydog\functions.php w linii 13
+
+2022-07-23T09:30:38+00:00 CRITICAL syntax error, unexpected '»' (T_STRING), expecting ';' or ',' w C:\strony\happydog\wp-content\themes\happydog\functions.php w linii 13
+

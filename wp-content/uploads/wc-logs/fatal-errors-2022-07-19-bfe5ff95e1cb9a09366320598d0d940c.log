@@ -1,0 +1,2 @@
+2022-07-19T13:56:18+00:00 CRITICAL require_once(): Failed opening required '/wp-content/themes/happydog/acfblocks.php' (include_path='C:\xampp\php\PEAR') w C:\strony\happydog\wp-content\themes\happydog\functions.php w linii 8
+

@@ -1,0 +1,26 @@
+2022-07-20T10:46:57+00:00 CRITICAL syntax error, unexpected '<', expecting end of file w C:\strony\happydog\wp-content\themes\happydog\modules\blocks\news.php w linii 77
+
+2022-07-20T10:47:09+00:00 CRITICAL Uncaught Error: Call to undefined function pagination_bar() in C:\strony\happydog\wp-content\themes\happydog\modules\blocks\news.php:68
+Stack trace:
+#0 C:\strony\happydog\wp-content\plugins\advanced-custom-fields-pro\pro\blocks.php(438): include()
+#1 C:\strony\happydog\wp-content\plugins\advanced-custom-fields-pro\pro\blocks.php(367): acf_render_block(Array, '', false, 13, Object(WP_Block), Array)
+#2 C:\strony\happydog\wp-content\plugins\advanced-custom-fields-pro\pro\blocks.php(328): acf_rendered_block(Array, '', false, 13, Object(WP_Block))
+#3 C:\strony\happydog\wp-includes\class-wp-block.php(255): acf_render_block_callback(Array, '', Object(WP_Block))
+#4 C:\strony\happydog\wp-includes\blocks.php(901): WP_Block->render()
+#5 C:\strony\happydog\wp-includes\blocks.php(939): render_block(Array)
+#6 C:\strony\happydog\wp-includes\class-wp-hook.php(307): do_blocks('<!-- wp:acf/hea...')
+#7 C:\strony\happydog\wp-includes\plugin.php(191): WP_Hook->apply_filters('<!-- wp:acf/hea...', Array)
+#8 C:\strony\happydog\wp-in w C:\strony\happydog\wp-content\themes\happydog\modules\blocks\news.php w linii 68
+
+2022-07-20T10:54:44+00:00 CRITICAL Uncaught Error: Call to undefined function pagination_bar() in C:\strony\happydog\wp-content\themes\happydog\modules\blocks\news.php:53
+Stack trace:
+#0 C:\strony\happydog\wp-content\plugins\advanced-custom-fields-pro\pro\blocks.php(438): include()
+#1 C:\strony\happydog\wp-content\plugins\advanced-custom-fields-pro\pro\blocks.php(367): acf_render_block(Array, '', false, 13, Object(WP_Block), Array)
+#2 C:\strony\happydog\wp-content\plugins\advanced-custom-fields-pro\pro\blocks.php(328): acf_rendered_block(Array, '', false, 13, Object(WP_Block))
+#3 C:\strony\happydog\wp-includes\class-wp-block.php(255): acf_render_block_callback(Array, '', Object(WP_Block))
+#4 C:\strony\happydog\wp-includes\blocks.php(901): WP_Block->render()
+#5 C:\strony\happydog\wp-includes\blocks.php(939): render_block(Array)
+#6 C:\strony\happydog\wp-includes\class-wp-hook.php(307): do_blocks('<!-- wp:acf/hea...')
+#7 C:\strony\happydog\wp-includes\plugin.php(191): WP_Hook->apply_filters('<!-- wp:acf/hea...', Array)
+#8 C:\strony\happydog\wp-in w C:\strony\happydog\wp-content\themes\happydog\modules\blocks\news.php w linii 53
+

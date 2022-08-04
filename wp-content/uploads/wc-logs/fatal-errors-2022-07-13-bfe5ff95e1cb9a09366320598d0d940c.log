@@ -1,0 +1,18 @@
+2022-07-13T13:56:11+00:00 CRITICAL syntax error, unexpected '=', expecting ')' w C:\strony\happydog\wp-content\themes\happydog\header.php w linii 235
+
+2022-07-13T13:56:18+00:00 CRITICAL syntax error, unexpected 'nav__btn' (T_STRING), expecting ')' w C:\strony\happydog\wp-content\themes\happydog\header.php w linii 240
+
+2022-07-13T13:56:29+00:00 CRITICAL syntax error, unexpected 'nav__btn' (T_STRING), expecting ')' w C:\strony\happydog\wp-content\themes\happydog\header.php w linii 240
+
+2022-07-13T13:56:45+00:00 CRITICAL syntax error, unexpected 'nav__btn' (T_STRING), expecting ')' w C:\strony\happydog\wp-content\themes\happydog\header.php w linii 240
+
+2022-07-13T13:57:00+00:00 CRITICAL syntax error, unexpected 'nav__btn' (T_STRING), expecting ')' w C:\strony\happydog\wp-content\themes\happydog\header.php w linii 240
+
+2022-07-13T13:57:03+00:00 CRITICAL syntax error, unexpected 'nav__btn' (T_STRING), expecting ')' w C:\strony\happydog\wp-content\themes\happydog\header.php w linii 240
+
+2022-07-13T13:57:44+00:00 CRITICAL syntax error, unexpected '$s' (T_VARIABLE), expecting ')' w C:\strony\happydog\wp-content\themes\happydog\header.php w linii 232
+
+2022-07-13T13:59:22+00:00 CRITICAL syntax error, unexpected ''container'' (T_CONSTANT_ENCAPSED_STRING), expecting ')' w C:\strony\happydog\wp-content\themes\happydog\header.php w linii 232
+
+2022-07-13T13:59:31+00:00 CRITICAL syntax error, unexpected '?>', expecting ')' w C:\strony\happydog\wp-content\themes\happydog\header.php w linii 233
+

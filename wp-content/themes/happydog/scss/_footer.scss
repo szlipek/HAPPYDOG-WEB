@@ -1,0 +1,99 @@
+.footer {
+    background: $c-one;
+    padding: $p1;
+    color: white;
+    @include breakpoint(tablet) {
+        padding: $p3
+    }
+    .container {
+        display: flex;
+        flex-wrap: wrap;
+        .publisher {
+            flex: 0 0 100%;
+            display: flex;
+            justify-content: flex-end;
+            margin-top: 2rem;
+        }
+        a {
+            color: white;
+            text-decoration: none;
+        }
+        .links {
+            display: flex;
+            flex-wrap: wrap;
+            li {
+                flex: 0 0 100%;
+            }
+            a {
+                opacity: .6;
+                transition: $transition;
+                font-size: 1.4rem;
+                line-height: 1.8rem;
+                &:hover {
+                    opacity: 1;
+                }
+            }
+        }
+        .col {
+            flex: 1;
+            @include breakpoint(phablet) {
+                flex: 0 0 50%;
+                margin-bottom: 4rem;
+            }
+            @include breakpoint(mobileonly) {
+                flex: 0 0 100%;
+            }
+            &:first-child {
+                .links {
+                    li {
+                        flex: 0 0 50%;
+                        box-sizing: border-box;
+                        padding-right: 1rem;
+                    }
+                }
+            }
+            &:nth-child(3) {
+                display: flex;
+                flex-direction: column;
+                align-items: flex-start;
+            }
+            &:nth-child(4) {
+                display: flex;
+                flex-direction: column;
+                .links {
+                    margin-top: 6rem;
+                    li {
+                        flex: 0 0 50%;
+                        @include breakpoint(mobileonly) {
+                            flex: 0 0 100%;
+                        }
+                        &:nth-child(even) {
+                            text-align: right;
+                            @include breakpoint(mobileonly) {
+                                text-align: left;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    &__title {
+        display: inline-block;
+        position: relative;
+        margin-bottom: 2rem;
+        font-size: 1.6rem;
+        &::after {
+            position: absolute;
+            display: block;
+            width: 100%;
+            height: 1px;
+            background: white;
+            bottom: -.2rem;
+            left: 0;
+            content: '';
+        }
+    }
+
+}

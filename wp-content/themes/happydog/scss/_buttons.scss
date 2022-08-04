@@ -1,0 +1,18 @@
+.btn {
+    font-size: 1.6rem;
+    padding: 2.3rem 3.7rem;
+    border-radius: 6rem;
+    color: white;
+    background: $c-one;
+    background: linear-gradient(180deg, #005495 0%, #003863 100%);
+    background-size: 1px 10rem;
+    display: inline-block;
+    text-decoration: none;
+    transition: $transition;
+    &__small {
+        padding: 1.2rem 3.7rem;
+    }
+    &:hover {
+        background-position-y: -3rem;
+    }
+}
