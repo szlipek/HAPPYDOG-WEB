@@ -5,7 +5,7 @@
                 <?php
 
                 global $product;
-                $post_thumbnail_id = $product->get_image_id();
+                global $post;
                 $wrapper_classes   = apply_filters(
                     'woocommerce_single_product_image_gallery_classes',
                     array(
@@ -21,15 +21,10 @@
                 </div>
                 <div class="<?php echo esc_attr( implode( ' ', array_map( 'sanitize_html_class', $wrapper_classes ) ) ); ?>" >
                     <figure class="woocommerce-product-gallery__wrapper">
+                    <div class="woocommerce-product-gallery__image">
+                        <a href="<?php echo get_the_post_thumbnail_url($loop->post->ID);?>"><img src="<?php echo get_the_post_thumbnail_url($loop->post->ID); ?>" class="img-responsive" alt=""/></a>
+                    </div>
                         <?php
-                        if ( $post_thumbnail_id ) {
-                            $html = wc_get_gallery_image_html( $post_thumbnail_id, true );
-                        } else {
-                            $html .= sprintf( '<img src="%s" alt="%s" class="wp-post-image" />', esc_url( wc_placeholder_img_src( 'woocommerce_single' ) ), esc_html__( 'Awaiting product image', 'woocommerce' ) );
-                        }
-
-                        echo apply_filters( 'woocommerce_single_product_image_thumbnail_html', $html, $post_thumbnail_id ); // phpcs:disable WordPress.XSS.EscapeOutput.OutputNotEscaped
-
                         do_action( 'woocommerce_product_thumbnails' );
                         ?>
                     </figure>
@@ -37,7 +32,19 @@
             </div>
             <div class="product__info">
                 <h1 class="title"><?php the_title();?></h1>
-                <?php global $post;
+                <?php if( have_rows('icons') ): ?>
+                    <div class="product__info__icons">
+                    <?php while( have_rows('icons') ): the_row();
+                        $ico = get_sub_field('icons_icon');
+                        ?>
+                        <figure>
+                            <img src="<?php echo $ico['url'];?>" width="<?php echo $ico['width'];?>" height="<?php echo $ico['height'];?>" alt="<?php echo $ico['alt'];?>" />
+                        </figure>
+                    <?php endwhile; ?>
+                    </div>
+                <?php endif; ?>
+
+                <?php
 
                  $short_description = apply_filters( 'woocommerce_short_description', $post->post_excerpt );
                 $id =  get_the_ID();
@@ -50,13 +57,14 @@
                  	<?php echo $short_description; // WPCS: XSS ok. ?>
                  </div>
                  <div class="product__attributes">
+
                  <?php
                  $variation_ids = $product->get_children();
                  if( $variation_ids ) {
                      foreach ( $variation_ids as $id ) {
                          $v_product = wc_get_product($id);
                          $product_attributes = wc_get_formatted_variation( $v_product, true, false, false );
-                         echo '<p class="variation" data-id='. $id .">". $product_attributes . ": ". wc_price( $v_product->get_price() ). " <span>". $v_product->description .'</span></p>';
+                         echo '<p class="variation" data-id='. $id .">". $product_attributes . ": <span>". wc_price( $v_product->get_price() ). " <span>". $v_product->description .'</span></span></p>';
                      }
                      }
                  ?>
@@ -74,7 +82,74 @@
         </div>
     </div>
 </article>
+<article class="product__desc">
+    <div class="container">
+        <?php the_field('desc');?>
+        <div class="row">
+            <div class="col">
+            <h2 class="title"><?php the_field('table_title');?></h2>
+            <?php
+            $table = get_field( 'table' );
 
+            if ( ! empty ( $table ) ) {
+
+                echo '<div class="table-row"><table border="0">';
+
+                    if ( ! empty( $table['caption'] ) ) {
+
+                        echo '<caption>' . $table['caption'] . '</caption>';
+                    }
+
+                    if ( ! empty( $table['header'] ) ) {
+
+                        echo '<thead>';
+
+                            echo '<tr>';
+
+                                foreach ( $table['header'] as $th ) {
+
+                                    echo '<th>';
+                                        echo $th['c'];
+                                    echo '</th>';
+                                }
+
+                            echo '</tr>';
+
+                        echo '</thead>';
+                    }
+
+                    echo '<tbody>';
+
+                        foreach ( $table['body'] as $tr ) {
+
+                            echo '<tr>';
+
+                                foreach ( $tr as $td ) {
+
+                                    echo '<td>';
+                                        echo $td['c'];
+                                    echo '</td>';
+                                }
+
+                            echo '</tr>';
+                        }
+
+                    echo '</tbody>';
+
+                echo '</table></div>';
+            }
+            ?>
+            </div>
+            <div class="col">
+                <?php $img = get_field('image');?>
+                <figure>
+                    <img src="<?php echo $img['url'];?>" alt="<?php echo $image['alt'];?>" width="<?php echo $image['width'];?>" height="<?php echo $image['height'];?>" />
+                </figure>
+            </div>
+        </div>
+    </div>
+</article>
+<?php get_template_part('modules/blocks/newsletter');?>
 <script>
     const imgs = document.querySelectorAll('.woocommerce-product-gallery__image a'),
     variations = document.querySelectorAll('.variation'),

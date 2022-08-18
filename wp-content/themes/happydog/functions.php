@@ -5,6 +5,9 @@
 @ini_set( 'max_execution_time', '300' );
 
 
+// modify search
+
+
 /**
  * Add a sidebar.
  */
@@ -72,6 +75,51 @@ function my_acf_init_block_types() {
             'keywords'          => array( 'products'),
         ));
         acf_register_block_type(array(
+            'name'              => 'text1',
+            'title'             => __('HappyDog - Tekst po lewej stronie'),
+            'description'       => __('Blok z dużym zdjęciem zdjęciem w tle i tekstem po lewej stronie'),
+            'render_template'   => 'modules/blocks/text_left.php',
+            'category'          => 'formatting',
+            'icon'              => 'slides',
+            'keywords'          => array( 'products'),
+        ));
+        acf_register_block_type(array(
+            'name'              => 'text1a',
+            'title'             => __('HappyDog - Tekst po lewej stronie w gridzie'),
+            'description'       => __('Blok ze zdjęciem po prawej i tekstem po lewej stronie'),
+            'render_template'   => 'modules/blocks/text_left1.php',
+            'category'          => 'formatting',
+            'icon'              => 'slides',
+            'keywords'          => array( 'products'),
+        ));
+         acf_register_block_type(array(
+            'name'              => 'text1b',
+            'title'             => __('HappyDog - Tekst po lewej stronie w gridzie oraz zdjęciem po prawej i tle'),
+            'description'       => __('Blok ze zdjęciem po prawej i tekstem po lewej stronie oraz zdjęciem w tle'),
+            'render_template'   => 'modules/blocks/text_left2.php',
+            'category'          => 'formatting',
+            'icon'              => 'slides',
+            'keywords'          => array( 'products'),
+        ));
+        acf_register_block_type(array(
+            'name'              => 'text2',
+            'title'             => __('HappyDog - Tekst na całą szerokość'),
+            'description'       => __('Blok tekstowy'),
+            'render_template'   => 'modules/blocks/text.php',
+            'category'          => 'formatting',
+            'icon'              => 'slides',
+            'keywords'          => array( 'products'),
+        ));
+        acf_register_block_type(array(
+            'name'              => 'text3',
+            'title'             => __('HappyDog - Tekst na całą szerokość plus sekcja z ikonami i tekstem '),
+            'description'       => __('Blok tekstowy'),
+            'render_template'   => 'modules/blocks/text-with-icons.php',
+            'category'          => 'formatting',
+            'icon'              => 'slides',
+            'keywords'          => array( 'products'),
+        ));
+        acf_register_block_type(array(
             'name'              => 'series',
             'title'             => __('HappyDog - Serie produktów'),
             'description'       => __('Blok z seriami produktów'),
@@ -112,6 +160,51 @@ function my_acf_init_block_types() {
             'title'             => __('HappyDog - informacje o produkcie'),
             'description'       => __('Blok produktowy - informacje o produkcie'),
             'render_template'   => 'modules/blocks/product.php',
+            'category'          => 'formatting',
+            'icon'              => 'slides',
+            'keywords'          => array( 'news'),
+        ));
+        acf_register_block_type(array(
+            'name'              => 'accordion',
+            'title'             => __('HappyDog - Lista rozwijalna'),
+            'description'       => __('Lista Rozwijalna'),
+            'render_template'   => 'modules/blocks/accordion.php',
+            'category'          => 'formatting',
+            'icon'              => 'slides',
+            'keywords'          => array( 'news'),
+        ));
+        acf_register_block_type(array(
+            'name'              => 'production',
+            'title'             => __('HappyDog - Jak powstaje karma - kroki'),
+            'description'       => __('Sekcja ze strzałkami krok po kroku'),
+            'render_template'   => 'modules/blocks/steps.php',
+            'category'          => 'formatting',
+            'icon'              => 'slides',
+            'keywords'          => array( 'news'),
+        ));
+        acf_register_block_type(array(
+            'name'              => 'icons',
+            'title'             => __('HappyDog - Sekcja z ikonami'),
+            'description'       => __('Sekcja tytułem i ikonami + opisy'),
+            'render_template'   => 'modules/blocks/icons.php',
+            'category'          => 'formatting',
+            'icon'              => 'slides',
+            'keywords'          => array( 'news'),
+        ));
+        acf_register_block_type(array(
+            'name'              => 'icons2',
+            'title'             => __('HappyDog - Sekcja z ikonami i zdjęciem po lewej stronie'),
+            'description'       => __('Sekcja tytułem zdjęciem po lewei i ikonami + opisy'),
+            'render_template'   => 'modules/blocks/icons1.php',
+            'category'          => 'formatting',
+            'icon'              => 'slides',
+            'keywords'          => array( 'news'),
+        ));
+        acf_register_block_type(array(
+            'name'              => 'form',
+            'title'             => __('HappyDog - formularz kontaktowy'),
+            'description'       => __('Sekcja z formularzem kontaktowym'),
+            'render_template'   => 'modules/blocks/form.php',
             'category'          => 'formatting',
             'icon'              => 'slides',
             'keywords'          => array( 'news'),
@@ -344,7 +437,18 @@ function njengah_remove_products_from_shop_page( $q ) {
 
 remove_action( 'woocommerce_no_products_found', 'wc_no_products_found' );
 
+// woocommerce query by args
 
+add_filter( 'wp_link_query_args', 'my_wp_link_query_args' );
+
+function my_wp_link_query_args( $query ) {
+    // check to make sure we are not in the admin
+    if ( !is_admin() ) {
+        $query['post_type'] = array( 'post', 'pages' ); // show only posts and pages
+    }
+
+    return $query;
+}
 
 // Enable Gutenberg in WooCommerce
 function activate_gutenberg_product( $can_edit, $post_type ) {

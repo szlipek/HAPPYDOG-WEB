@@ -15,4 +15,33 @@
     &:hover {
         background-position-y: -3rem;
     }
+    &__second {
+        background: inherit;
+        border: 1px solid $c-one;
+        color: $c-one;
+        box-sizing: border-box;
+        &:hover {
+            background: $c-one;
+            color: white;
+        }
+    }
+}
+
+.link {
+    color: $c-one;
+    font-style: italic;
+    font-size: 1.8rem;
+    line-height: 2.3rem;
+    position: relative;
+    text-decoration: none;
+    &::after {
+        content: '';
+        display: block;
+        position: absolute;
+        left: 0;
+        width: 100%;
+        height: 1px;
+        background: $c-one;
+        top: 100%;
+    }
 }

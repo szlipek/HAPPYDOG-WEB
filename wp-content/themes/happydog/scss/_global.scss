@@ -18,3 +18,19 @@ main {
 .box-shadow {
     box-shadow: $shadow1;
 }
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+.row {
+    display: flex;
+}
+.aligncenter {
+    text-align: center;
+}
+
+img.aligncenter {
+    display: block;
+    margin: .5rem auto;
+}

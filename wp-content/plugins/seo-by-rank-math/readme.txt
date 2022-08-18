@@ -5,9 +5,9 @@ Tags: seo, sitemap, google search console, schema, redirection, WordPress SEO
 Tested up to: 6.0
 Requires at least: 5.6
 Requires PHP: 7.2
-Stable tag: 1.0.93.1
-License: GPL-2.0+
-License URI: https://www.gnu.org/licenses/gpl-2.0.txt
+Stable tag: 1.0.95.1
+License: GPLv3 or later
+License URI: https://www.gnu.org/licenses/gpl-3.0.txt
 
 Rank Math SEO is the Best WordPress SEO plugin combines the features of many SEO tools in a single package & helps you multiply your SEO traffic.
 
@@ -580,19 +580,19 @@ Please drop us an email at support@rankmath.com and we would be more than happy 
 
 == Changelog ==
 
-= 1.0.93 [July 13, 2022] =
-* Added: [Content Analysis](https://rankmath.com/kb/score-100-in-tests/) can now analyze the content added using the Reusable blocks
-* Improved: [Schema](https://rankmath.com/kb/woocommerce-product-schema/) on product variant pages to make it compatible with Google's Merchant Center
-* Improved: Increased the number of properties shown in the [Analytics Settings](https://rankmath.com/kb/general-settings/#analytics-settings)
-* Fixed: [Include](https://rankmath.com/kb/general-settings/#nofollow-domains) & [Exclude Nofollow domains](https://rankmath.com/kb/general-settings/#no-follow-exclude-domains) were not working well when values were added with `HTTP` protocol
-* Fixed: The `%seo_title%` & `%seo_description%` variables were not working well in the [Schema Generator](https://rankmath.com/kb/schema-generator/)
-* Fixed: Text added to [FAQ](https://rankmath.com/kb/faq-schema-block/#adding-faq-blocks-in-rank-math) & [HowTo](https://rankmath.com/kb/howto-schema/#num-1-2-add-the-howto-block-to-the-post) blocks in the dark theme was not visible
-* Fixed: PHP 8.0 errors on some setups where the Schema was not configured properly
-* Fixed: Compatibility issues with other plugins/themes that used the Tagify library
+= 1.0.95 [Aug 11, 2022] =
+* Added: Site logo is now used as a fallback when the logo is not added in the [Local SEO settings](https://rankmath.com/kb/local-seo/#logo)
+* Added: The `contentUrl` property in `ImageObject`
+* Added: [New filter](https://rankmath.com/kb/filters-hooks-api-developer/#disable-keyword-suggestions) to disable the Focus keyword auto-suggestion
+* Improved: [SEO Analysis](https://rankmath.com/kb/seo-analysis/) will now include only the post types where the Rank Math metabox is enabled
+* Improved: CPT name will now be used in the [Breadcrumb](https://rankmath.com/kb/general-settings/#breadcrumbs) instead of Post type's Singular name
+* Fixed: [Content AI test](https://rankmath.com/kb/how-to-use-content-ai/#content-ai-results-overview) was not recognizing the uppercase keywords in the content
+* Fixed: Dependent [Modules](https://rankmath.com/kb/managing-modules/) were not getting deactivated after deactivating the main module
+* Fixed: [Links Per Sitemap](https://rankmath.com/kb/configure-sitemaps/#links-per-sitemap) option was not working properly on some setups
+* Fixed: [URL Inspection API](https://rankmath.com/kb/url-inspection-api-integration/) was not working on some sites where the site locale didn't match with the language code required by the URL Inspection API
+* Fixed: PHP warning on BuddyPress Members page when Schema module is active
 
-= 1.0.93.1 [July 18, 2022] =
-* Improved: A visual bug in [SEO Details column](https://rankmath.com/kb/titles-and-meta/#bulk-editing) in the Post list was incorrectly showing `Noindex` on the posts that were not configured with the Rank Math plugin. Nothing was impacted on anyone's website (especially for Google and other search engines) as it was just a visual bug in the backend and that too on the posts/pages that were not configured with Rank Math yet
-* Fixed: [Rank Math Account](https://rankmath.com/kb/free-account-benefits/) used to get automatically disconnected on some setups
-* Fixed: [Keyword Autosuggest](https://rankmath.com/kb/keyword-research-with-rank-math/#keyword-autosuggest) was not working after the last update
+= 1.0.95.1 [Aug 12, 2022] =
+* Fixed: Public REST endpoints blocked via `.htaccess` file were accessible through [Headless](https://rankmath.com/kb/headless-cms-support/) endpoint, when that option was active (props to [Yeraisci](https://twitter.com/yeraisci_))
 
 Full changelog can be found here - **[Rank Math SEO changelog](https://rankmath.com/changelog/?utm_source=Plugin&utm_medium=Changelog&utm_campaign=WP)**

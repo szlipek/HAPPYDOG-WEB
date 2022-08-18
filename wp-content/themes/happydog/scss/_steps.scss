@@ -1,0 +1,96 @@
+.steps {
+    background: $c-five;
+    padding: $p1;
+    &__row {
+        display: flex;
+        align-items: flex-start;
+        justify-content: space-between;
+        gap: 5rem;
+        @include breakpoint(phablet) {
+            flex-wrap: wrap;
+        }
+        figure {
+            height: 34rem;
+            max-width: 34rem;
+            width: 100%;
+            margin: 0 auto 2rem;
+            @include breakpoint(phablet) {
+                height: auto;
+            }
+            img {
+                height: 100%;
+                width: 100%;
+                object-fit: contain;
+                object-position: center;
+            }
+        }
+    }
+    &__single {
+        text-align: center;
+        position: relative;
+        flex: 1;
+        @include breakpoint(phablet) {
+            flex: 0 0 100%;
+            box-sizing: border-box;
+            padding: 0 2rem;
+        }
+        h3 {
+            color: $c-one;
+            margin-bottom: .5rem;
+        }
+        &:nth-child(odd) {
+            &::after {
+                content: '';
+                display: block;
+                position: absolute;
+                bottom: 20%;
+                right: 0;
+                transform: translateX(70%);
+                width: 20rem;
+                height: 10rem;
+                background-image: url('/wp-content/themes/happydog/assets/img/arrow1.svg');
+                background-repeat: no-repeat;
+                background-size: contain;
+                background-position: center;
+                @include breakpoint(phablet) {
+                    bottom: 0;
+                    transform: translateY(100%) translateX(-20%) rotate(90deg);
+                    right: initial;
+                    left: 0;
+                    width: 6rem;
+                    height: 6rem;
+                }
+            }
+        }
+        &:nth-child(even) {
+            &::after {
+                content: '';
+                display: block;
+                position: absolute;
+                top: 5%;
+                right: 0;
+                transform: translateX(70%);
+                width: 20rem;
+                height: 10rem;
+                background-image: url('/wp-content/themes/happydog/assets/img/arrow2.svg');
+                background-repeat: no-repeat;
+                background-size: contain;
+                background-position: center;
+                @include breakpoint(phablet) {
+                    bottom: 0;
+                    transform: translateY(100%) translateX(20%) rotate(90deg);
+                    left: initial;
+                    right: 0;
+                    width: 6rem;
+                    height: 6rem;
+                    top: initial;
+                }
+            }
+        }
+        &:last-child {
+            &::after {
+                display: none;
+            }
+        }
+    }
+}

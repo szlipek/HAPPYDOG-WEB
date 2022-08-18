@@ -1,29 +1,138 @@
 .section {
     position: relative;
     padding: $p2;
+    @include breakpoint(tablet) {
+        padding: 4rem 0;
+    }
+
     &__text {
         max-width: 55%;
         margin-left: 45%;
         position: relative;
         z-index: 2;
+        p {
+            margin-bottom: 2rem;
+        }
+        h5 {
+            color: $c-one;
+            margin-bottom: 2rem;
+        }
         @include breakpoint(tablet) {
             max-width: 100%;
             margin-left: 0;
         }
+
         .btn {
             margin-top: 4rem;
         }
     }
+
     &__bg {
         position: absolute;
         top: 0;
         left: 0;
         width: 100%;
         height: 100%;
+
         img {
             width: 100%;
             height: 100%;
             object-fit: cover;
+        }
+    }
+    .row {
+        gap: 4rem;
+        align-items: center;
+        flex-wrap: wrap;
+        .col {
+            position: relative;
+            @include breakpoint(upPhablet) {
+                flex: 1;
+            }
+        }
+
+    }
+
+    &--reverse {
+        .section__text {
+            margin-left: 0;
+        }
+        .row {
+            flex-wrap: wrap-reverse;
+        }
+    }
+
+}
+
+.text {
+    padding: 3rem 0;
+
+    h2 {
+        color: $c-one;
+        margin-bottom: 2.5rem;
+
+        &::before {
+            content: '-';
+            padding-right: .5rem;
+        }
+
+        &::after {
+            content: '-';
+            padding-left: .5rem;
+        }
+    }
+
+    ul {
+        margin: 2rem 0;
+        li {
+            position: relative;
+            margin-left: 3rem;
+            margin-bottom: 1rem;
+            font-size: 1.6rem;
+            line-height: 2.4rem;
+            &::before {
+                content: '';
+                display: block;
+                width: 2.2rem;
+                height: 2.2rem;
+                background-image: url(/wp-content/themes/happydog/assets/img/check-circle.svg);
+                background-repeat: no-repeat;
+                background-size: contain;
+                position: absolute;
+                top: 0;
+                left: -3rem;
+            }
+
+        }
+    }
+    .infos {
+        &__single {
+            display: flex;
+            align-items: center;
+            gap: 2rem;
+            flex-wrap: wrap;
+            margin-bottom: 3rem;
+            figure {
+                width: 9.8rem;
+                height: 9.8rem;
+                @include breakpoint(phablet) {
+                    flex: 0 0 100%;
+                }
+                img {
+                    width: 100%;
+                    height: 100%;
+                    object-fit: contain;
+                    @include breakpoint(phablet) {
+                        margin: 0 auto;
+                    }
+                }
+            }
+            div {
+                flex: 0 0 calc(100% - 11.8rem);
+                @include breakpoint(phablet) {
+                    flex: 0 0 100%;
+                }
+            }
         }
     }
 }

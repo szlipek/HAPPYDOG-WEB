@@ -105,6 +105,12 @@ function scrollAnchors(e, respond) {
 
 
 window.addEventListener('scroll', function(){
+    changeNav();
+});
+
+changeNav();
+
+function changeNav() {
     scrollpos = window.scrollY;
 
     if(scrollpos > 30){
@@ -113,4 +119,83 @@ window.addEventListener('scroll', function(){
     else {
         document.querySelector('.nav').classList.remove('scrolled');
     }
-});
+}
+
+
+
+// quantity
+
+if(document.querySelector('.quantity')) {
+    const quantities = document.querySelectorAll('.quantity');
+
+    quantities.forEach(function(i){
+        i.querySelector('.plus').addEventListener('click', quantityPlus);
+        i.querySelector('.minus').addEventListener('click', quantityMinus)
+    })
+}
+
+function quantityPlus() {
+    let inputVal = this.closest('.quantity').querySelector('input').value;
+    const newVal = parseFloat(inputVal) + 1;
+    this.closest('.quantity').querySelector('input').value = newVal;
+    document.querySelector('.ajax_add_to_cart').setAttribute('data-quantity', newVal)
+}
+
+function quantityMinus() {
+    let inputVal = this.closest('.quantity').querySelector('input').value;
+    let newVal = parseFloat(inputVal)
+    if(inputVal >= 2) {
+        newVal = newVal - 1;
+    }
+
+    this.closest('.quantity').querySelector('input').value = newVal;
+    document.querySelector('.ajax_add_to_cart').setAttribute('data-quantity', newVal)
+}
+
+// attribute select
+
+if(document.querySelector('.products__attributes-list')) {
+    const attributes = document.querySelectorAll('.products__attributes-list'),
+        variations = document.querySelectorAll('.variation');
+
+    variations.forEach(function(i){
+
+        i.addEventListener('click', changeAttribute);
+
+
+    })
+
+    function changeAttribute() {
+        this.closest('.products__single').querySelector('.variation.active').classList.remove('active');
+        const price = this.getAttribute('data-price'),
+            id = this.getAttribute('data-id');
+        this.closest('.products__single').querySelector('.price').innerHTML = price;
+        this.classList.add('active');
+        this.closest('.products__single').querySelector('.add_to_cart_button').setAttribute('href', '?add-to-cart='+id);
+        this.closest('.products__single').querySelector('.add_to_cart_button').setAttribute('data-product_id', id);
+    }
+
+
+    attributes.forEach(function(i){
+        const price = i.querySelector('.variation').getAttribute('data-price'),
+            id = i.querySelector('.variation').getAttribute('data-id');
+        i.closest('.products__single').querySelector('.price').innerHTML = price;
+        i.querySelector('.variation').classList.add('active');
+        i.closest('.products__single').querySelector('.add_to_cart_button').setAttribute('href', '?add-to-cart='+id);
+        i.closest('.products__single').querySelector('.add_to_cart_button').setAttribute('data-product_id', id);
+    })
+
+
+}
+
+const accordion = e => {
+    e.currentTarget.closest('.accordion__single').classList.toggle('active');
+}
+
+if(document.querySelector('.accordion')) {
+    const accordionButtons = document.querySelectorAll('.accordion__single h5');
+
+    accordionButtons.forEach(i => {
+        i.addEventListener('click', accordion);
+    })
+}

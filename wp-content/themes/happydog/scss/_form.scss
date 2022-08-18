@@ -1,0 +1,114 @@
+.club {
+    background: white;
+    box-shadow: $shadow;
+    border-radius: 4.3rem;
+    box-sizing: border-box;
+    padding: 7rem 13rem;
+    margin-bottom: 7rem;
+    @include breakpoint(smallDesktop) {
+        padding: 4rem 8rem;
+    }
+    @include breakpoint(tablet) {
+        padding: 3rem;
+    }
+    h2 {
+        text-align: center;
+    }
+}
+
+.form {
+    &__top {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 1rem;
+        margin-bottom: 4rem;
+        flex-wrap: wrap;
+        @include breakpoint(tablet) {
+            margin-bottom: 1rem;
+        }
+        br {
+            display: none;
+        }
+        span {
+            flex: 0 0 calc(33% - 1rem);
+            @include breakpoint(tablet) {
+                flex: 0 0 100%;
+            }
+        }
+    }
+
+    input {
+        height: 4.7rem;
+        width: 100%;
+        font-size: 1.6rem;
+        color: $c-one;
+        padding: 0 1.5rem;
+        border-radius: 3rem;
+        border: 1px solid $c-three;
+        box-sizing: border-box;
+        font-family: $f-one;
+        &[type="submit"] {
+            margin: 4rem auto 0;
+            border-radius: 3.4rem;
+            background: linear-gradient(180deg, #005495 0%, #003863 100%);
+            color: white;
+            height: 6.2rem;
+            max-width: 25rem;
+            display: block;
+            cursor: pointer;
+        }
+        &.wpcf7-not-valid {
+            border-color: red;
+        }
+    }
+    textarea {
+        height: 10.4rem;
+        width: 100%;
+        font-size: 1.6rem;
+        color: $c-one;
+        padding: .5rem 1.5rem;
+        border-radius: 2.3rem;
+        border: 1px solid $c-three;
+        box-sizing: border-box;
+        line-height: 2rem;
+        resize: none;
+        font-family: $f-one;
+        margin-bottom: 3rem;
+        @include breakpoint(tablet) {
+            margin-bottom: 1rem;
+        }
+    }
+    .wpcf7-checkbox {
+        label {
+            display: flex;
+            gap: 3rem;
+            font-size: 1.4rem;
+            line-height: 2rem;
+            @include breakpoint(tablet) {
+                gap: 1rem;
+            }
+            input {
+                flex: 0 0 4.2rem;
+                @include breakpoint(tablet) {
+                    flex: 0 0 3rem;
+                }
+            }
+
+        }
+        .wpcf7-list-item {
+            margin-left: 0;
+        }
+    }
+    .wpcf7-not-valid-tip {
+        display: none !important;
+    }
+
+}
+
+.wpcf7-response-output {
+    font-size: 2rem;
+    text-align: center;
+    box-sizing: border-box;
+    padding: 1rem !important;
+}
